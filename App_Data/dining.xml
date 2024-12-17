@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HomeDecor>
+	<Category name="MUGS, CUPS &amp; DRINKWARE">
+		<Type>Mugs, Cups &amp; Kulhads</Type>
+		<Type>Bottles, Sippers &amp; Flasks</Type>
+		<Type>Tea sets &amp; Tea pots</Type>
+		<Type>Drink Dispensers</Type>
+		<Type>Glasses</Type>
+	</Category>
+	<Category name="BARWARE">
+		<Type>Icecream Cups</Type>
+		<Type>Mocktail &amp; Cocktail Glasses</Type>
+		<Type>Wine &amp; Champagne Glasses</Type>
+		<Type>Beer Mugs &amp; Shot Glasses</Type>
+		<Type>Scotch &amp; Whiskey Glasses</Type>
+		<Type>Barware Tools &amp; Accessories</Type>
+	</Category>
+	<Category name="BOWLS">
+		<Type>Serving Bowls</Type>
+		<Type>Mixing Bowls</Type>
+		<Type>Soup &amp; Snack Bowls</Type>
+		<Type>Dip Bowls</Type>
+	</Category>
+	<Category name="CUTLERY">
+		<Type>Cutlery</Type>
+	</Category>
+	<Category name="TRAYS &amp; PLATTERS">
+		<Type>Trays &amp; Platters</Type>
+	</Category>
+	<Category name="DINNER &amp; QUARTER PLATES">
+		<Type>Dinner &amp; Quarter Plates</Type>
+	</Category>
+	<Category name="DINNER SETS">
+		<Type>Dinner Sets</Type>
+	</Category>
+</HomeDecor>

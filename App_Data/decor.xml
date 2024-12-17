@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HomeDecor>
+	<Category name="LAMPS &amp; LIGHTING">
+		<Type>Table Lamps</Type>
+		<Type>Study Lamps</Type>
+		<Type>Ceiling Lamps</Type>
+		<Type>Wall Lamps</Type>
+		<Type>Floor Lamps</Type>
+		<Type>String Lights</Type>
+		<Type>Out Door Lamps</Type>
+	</Category>
+	<Category name="WALL DECOR">
+		<Type>Wall Art &amp; Paintings</Type>
+		<Type>Wall Plates</Type>
+		<Type>Wall Accents</Type>
+		<Type>Wall Shelves</Type>
+		<Type>Photo-frames</Type>
+		<Type>Windchimes &amp; Dreamcatchers</Type>
+		<Type>Wall Poster</Type>
+	</Category>
+	<Category name="ARTIFICIAL FLOWERS &amp; PLANTS">
+		<Type>Artificial Flowers</Type>
+		<Type>Artificial Plants</Type>
+		<Type>Pots &amp; Planters</Type>
+		<Type>Flowers with Pot</Type>
+	</Category>
+	<Category name="CLOCKS">
+		<Type>Wall Clocks</Type>
+		<Type>Designer Clocks</Type>
+		<Type>Station Clocks</Type>
+		<Type>Table Clocks</Type>
+	</Category>
+	<Category name="OTHERS">
+		<Type>Showpieces</Type>
+		<Type>Vases</Type>
+		<Type>Mirrors</Type>
+		<Type>Religious &amp; Spiritual Items</Type>
+		<Type>Candles &amp; Aroma</Type>
+		<Type>Candle Stand &amp; Holders</Type>
+		<Type>Accent Furnitures</Type>
+	</Category>
+	
+</HomeDecor>

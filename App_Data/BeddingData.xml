@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Bedding>
+	<Category name="BEDSHEETS BY DESIGN">
+		<Type>Abstract Bedsheets</Type>
+		<Type>Solid Bedsheets</Type>
+		<Type>Floral Bedsheets</Type>
+		<Type>Geometric Bedsheets</Type>
+		<Type>Indian / Ethnic Bedsheets</Type>
+		<Type>Kids Bedsheets</Type>
+	</Category>
+	<Category name="BEDSHEETS BY SIZE">
+		<Type>King Bedsheets</Type>
+		<Type>Queen/Double Bedsheets</Type>
+		<Type>Single Bedsheets</Type>
+		<Type>Super King Bedsheets</Type>
+		<Type>Queen Fitted Bedsheets</Type>
+		<Type>Single Fitted Bedsheets</Type>
+	</Category>
+	<Category name="OTHER BEDDING ITEMS">
+		<Type>DOHARS, RAZAI &amp; BLANKETS</Type>
+		<Type>COMFORTERS &amp; AC QUILTS</Type>
+		<Type>DUVET COVERS</Type>
+		<Type>BEDCOVERS</Type>
+		<Type>PILLOW &amp; BOLSTER COVERS</Type>
+		<Type>MATTRESS PROTECTORS</Type>
+		<Type>BEDDING SET</Type>
+	</Category>
+</Bedding>
+

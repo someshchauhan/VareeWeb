@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HomeDecor>
+	<Category name="CONTAINERS &amp; JARS">
+		<Type>Bottles, Sippers &amp; Flasks</Type>
+		<Type>Bread &amp; Fruit Baskets</Type>
+		<Type>Casseroles</Type>
+		<Type>Oil Dispensers</Type>
+		<Type>Lunch Boxes</Type>
+		<Type>Masala Boxes</Type>
+		<Type>Cutlery Stand &amp; Tissue Holder</Type>
+	</Category>
+	<Category name="COOKWARE">
+		<Type>Cooking Pots &amp; Handi</Type>
+		<Type>Kadhai &amp; Wok</Type>
+		<Type>Pressure Cookers &amp; Steamers</Type>
+		<Type>Pans &amp; Grillpans</Type>
+		<Type>Tawa</Type>
+		<Type>Knives &amp; Scissors</Type>
+		<Type>Kitchen Tools &amp; Gadgets</Type>
+		<Type>Cookware Sets</Type>
+	</Category>
+	<Category name="BAKEWARE">
+		<Type>Cake Stands</Type>
+		<Type>Cake &amp; Bread Moulds</Type>
+		<Type>Chocolate Moulds</Type>
+		<Type>Baking Tools</Type>
+		<Type>Baking Dishes</Type>
+	</Category>
+	<Category name="KITCHEN LINENS">
+		<Type>Aprons &amp; Gloves</Type>
+		<Type>Table-mats &amp; Napkins</Type>
+		<Type>Table Runner &amp; Covers</Type>
+		<Type>Table Coasters</Type>
+		<Type>Hot Mats &amp; Pot Holders</Type>
+	</Category>
+</HomeDecor>

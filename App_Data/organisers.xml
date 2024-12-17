@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HomeDecor>
+	<Category name="BOXES &amp; BASKETS">
+		<Type>Laundry Baskets</Type>
+		<Type>Storage Boxes &amp; Baskets</Type>
+		<Type>Dustbins</Type>
+	</Category>
+	<Category name="HOOKS &amp; HOLDERS">
+		<Type>Key Holders</Type>
+		<Type>Magazine Holders</Type>
+	</Category>
+	<Category name="RACKS &amp; SHELVES">
+		<Type>Racks</Type>
+		<Type>Shelves</Type>
+	</Category>
+	<Category name="ORGANISERS BY SPACE">
+		<Type>Kitchen &amp; Dining Organisers</Type>
+		<Type>Bedroom / Wardrobe Organisers</Type>
+		<Type>Bathroom Organisers</Type>
+		<Type>Living Room Organisers</Type>
+		<Type>Jewellery Organisers</Type>
+		<Type>Desk Organisers</Type>
+		<Type>Prayer Room Organisers</Type>
+	</Category>
+</HomeDecor>

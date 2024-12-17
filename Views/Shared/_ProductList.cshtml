@@ -1,0 +1,13 @@
+﻿@model IEnumerable<VareeWeb.Models.ProductDetail>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var product in Model)
+    {
+        <div>@product.ProductName - ₹@product.Price</div>
+    }
+}
+else
+{
+    <div>No products found</div>
+}

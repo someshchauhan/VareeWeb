@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HomeDecor>
+	<Category name="POTS &amp; PLANTERS">
+		<Type>Pots &amp; Planters</Type>
+	</Category>
+	<Category name="PLANTS &amp; SEEDS">
+		<Type>Plants &amp; Seeds</Type>
+	</Category>
+	<Category name="GARDENING ACCESSORIES">
+		<Type>Gardening Accessories</Type>
+	</Category>
+</HomeDecor>

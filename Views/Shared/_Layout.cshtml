@@ -1,0 +1,1441 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <style>
+
+        /*layout page start*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff;
+        }
+
+        .app-download-banner {
+            height: 40px;
+        }
+
+            .app-download-banner a {
+                height: 40px;
+                width: 100%;
+            }
+
+                .app-download-banner a img {
+                    height: 40px;
+                    width: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+
+        .sale-notify {
+            padding: 5px 7px;
+            background: black;
+        }
+
+            .sale-notify h6 {
+                color: rgb(239, 201, 12);
+                text-align: center;
+                font-weight: 500;
+                letter-spacing: 1px;
+                font-size: 14px;
+            }
+
+        .nav-wrap {
+            background: #ffffff;
+            box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 3px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .nav {
+            padding: 3px 5px;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+
+
+
+        .nav-start {
+            padding: 0 10px;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 15px;
+        }
+
+        .applicationLogo {
+            font-family: Rockwell;
+            font-size: 35px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-mid {
+            text-align: center;
+            width: 720px;
+            position: relative;
+        }
+
+        .form {
+            position: relative;
+            width: 100%;
+        }
+
+            .form .fa-search {
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                color: #9ca3af;
+            }
+
+            .form span {
+                position: absolute;
+                right: 17px;
+                top: 13px;
+                padding: 2px;
+                border-left: 1px solid #d1d5db;
+            }
+
+        .left-pan {
+            padding-left: 7px;
+        }
+
+            .left-pan i {
+                padding-left: 10px;
+            }
+
+        .form-input {
+            height: 35px;
+            width: 100%;
+            text-indent: 33px;
+            border-radius: 30px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            background: whitesmoke;
+        }
+
+            .form-input:focus {
+                box-shadow: none;
+                border: none;
+            }
+
+            .form-input::placeholder {
+                font-family: Rockwell;
+                font-size: 14px;
+                letter-spacing: 1px;
+                font-weight: 600;
+            }
+
+        .search-results-container {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            max-height: 600px;
+            width: 100%;
+            background: whitesmoke;
+            border: 2px solid rgba(0,0,0,0.4);
+            border-radius: 20px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+            display: none;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 10px;
+            overflow-y: auto;
+            z-index: 1;
+            padding: 10px;
+            font-family: Rockwell;
+        }
+
+            .search-results-container::-webkit-scrollbar {
+                display: none;
+            }
+
+
+
+        .search-result-item {
+            height: 400px;
+            width: 300px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+        }
+
+        .search-result-item-top {
+            height: 200px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+            .search-result-item-top img {
+                height: 200px;
+                width: 200px;
+                border-radius: 20px;
+                object-fit: cover;
+            }
+
+        .search-result-item-bottom {
+            height: 200px;
+            width: 100%;
+            font-family: Rockwell;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #displayDiscount {
+            background: lime;
+            padding: 4px;
+            color: aliceblue;
+            border-radius: 10px;
+        }
+
+        .nav-end {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-end-links {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .user-options {
+            display: none;
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            min-width: 120px;
+            z-index: 1000; 
+            border-radius: 5px;
+        }
+
+        #user-nav {
+            position: relative; 
+            cursor: pointer;
+        }
+
+            #user-nav:hover .user-options {
+                display: block; 
+            }
+
+        .auth-link {
+            color: #333;
+            text-decoration: none;
+            display: block; 
+            padding: 3px 5px;
+            text-align: center;
+        }
+
+            .auth-link:hover {
+                background-color: #f0f0f0;
+                color: #000;
+            }
+
+
+
+        
+
+        #cart {
+            position: relative;
+        }
+
+        #cartCount {
+            position: absolute;
+            height: 12px;
+            width: 12px;
+            font-size: 9px;
+            font-weight: 700;
+            border-radius: 50%;
+            background: red;
+            color: aliceblue;
+            text-align: center;
+        }
+
+        .nav-down {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 45px;
+            align-items: center;
+            position: relative;
+        }
+
+        .products, .helpSec {
+            font-size: 14px;
+            font-weight: 400;
+            color: black;
+            text-decoration: none;
+            font-family: Rockwell;
+            letter-spacing: 1px;
+            height: 100%;
+            padding: 3px 3px;
+        }
+
+            .products:hover {
+                background: rgb(255, 250, 246);
+                border-bottom: 2px solid rgb(233, 132, 60);
+            }
+
+        .product-category {
+            width: 80%;
+            background: whitesmoke;
+            display: none;
+            justify-content: space-evenly;
+            gap: 30px;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+            .product-category ul {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 25px;
+            }
+
+                .product-category ul li {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                    .product-category ul li h6 {
+                        border-bottom: 1px solid rgba(0,0,0,0.3);
+                        text-align: center;
+                        font-family: Rockwell;
+                        letter-spacing: 1px;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+
+                    .product-category ul li ul {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .product-category ul li a {
+                        text-decoration: none;
+                        color: #333;
+                        font-size: 14px;
+                        font-family: Rockwell;
+                        letter-spacing: 1px;
+                        font-weight: 600;
+                    }
+
+
+
+        .product-links:hover .product-category {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 10%;
+        }
+
+        .helpSec:hover {
+            color: rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+            background: rgb(250, 244, 244);
+            padding: 20px;
+        }
+
+        .foot-cat-box {
+            padding: 10px;
+        }
+
+            .foot-cat-box h6 {
+                text-align: center;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                font-family: Rockwell;
+            }
+
+            .foot-cat-box ul li {
+                padding: 5px;
+                list-style: none;
+            }
+
+                .foot-cat-box ul li a {
+                    text-decoration: none;
+                    color: black;
+                    font-family: Rockwell;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    font-size: 13px;
+                }
+
+        .copy-policy {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+            padding: 20px 30px;
+            font-family: Rockwell;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+            .copy-policy a {
+                text-decoration: none;
+                color: rgba(0,0,0,0.7);
+                font-family: Rockwell;
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-size: 14px;
+            }
+
+        #copyrightPolicy {
+            color: rgb(205, 170, 21);
+        }
+
+        #whatsapp-share {
+            position: fixed;
+            height: 50px;
+            width: 50px;
+            bottom: 50px;
+            right: 5px;
+            border-radius: 50%;
+            background: limegreen;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-items: center;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+        }
+
+            #whatsapp-share i {
+                font-size: 40px;
+            }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+            background: rgb(250, 244, 244);
+            padding: 20px;
+        }
+
+        .foot-cat-box {
+            padding: 10px;
+        }
+
+            .foot-cat-box h6 {
+                text-align: center;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                font-family: Rockwell;
+            }
+
+            .foot-cat-box ul li {
+                padding: 5px;
+                list-style: none;
+            }
+
+                .foot-cat-box ul li a {
+                    text-decoration: none;
+                    color: black;
+                    font-family: Rockwell;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    font-size: 13px;
+                }
+
+        .copy-policy {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+            padding: 20px 30px;
+            font-family: Rockwell;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+            .copy-policy a {
+                text-decoration: none;
+                color: rgba(0,0,0,0.7);
+                font-family: Rockwell;
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-size: 14px;
+            }
+
+        #copyrightPolicy {
+            color: rgb(205, 170, 21);
+        }
+
+        #whatsapp-share {
+            position: fixed;
+            height: 50px;
+            width: 50px;
+            bottom: 50px;
+            right: 5px;
+            border-radius: 50%;
+            background: limegreen;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-items: center;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+        }
+
+            #whatsapp-share i {
+                font-size: 40px;
+            }
+
+        /*layout page end here*/
+
+        /*index of home start */
+
+        #wishAddedMessage {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .banner {
+            height: 600px;
+            width: 85%;
+            margin: 15px auto;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 30px;
+        }
+
+        .bannerIntro {
+            height: 280px;
+            width: 100%;
+        }
+
+            .bannerIntro img {
+                height: 280px;
+                width: 100%;
+            }
+
+        .banner-products {
+            height: 220px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 0;
+        }
+
+            .banner-products a {
+                height: 220px;
+                width: 20%;
+            }
+
+            .banner-products img {
+                width: 100%;
+                height: 220px;
+            }
+
+        .banner-end {
+            height: 100px;
+        }
+
+            .banner-end img {
+                height: 100px;
+                width: 100%;
+            }
+
+        .discounted-items {
+            margin: 10px auto;
+            height: 500px;
+            width: 85%;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .left-sec {
+            height: 500px;
+        }
+
+            .left-sec img {
+                height: 500px;
+                width: 100%;
+                border-radius: 30px 30px 0 0;
+            }
+
+        .right-sec {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+            .right-sec img {
+                height: 245px;
+                width: 100%;
+            }
+
+        .slogan {
+            margin-top: 10px;
+            padding: 20px;
+        }
+
+            .slogan h3, .slogan h6 {
+                text-align: center;
+                font-family: 'Bernard MT';
+                font-weight: 400;
+                letter-spacing: 1px;
+            }
+
+                .slogan h3 span {
+                    font-family: Forte;
+                }
+
+
+        .stars-vids {
+            margin: 10px auto;
+            height: 400px;
+            width: 90%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .star-box {
+            height: 400px;
+            width: 24.25%;
+            font-family: Rockwell;
+            font-weight: 500;
+        }
+
+            .star-box video {
+                height: 400px;
+                width: 100%;
+                object-fit: cover;
+                display: block;
+                border-radius: 10px;
+            }
+
+        .DealsOfDay {
+            margin: 25px auto;
+            height: 400px;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgb(194, 248, 231);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .imgSec {
+            height: 380px;
+            width: 19.5%;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        #dealEnds {
+            width: 60%;
+            position: absolute;
+            bottom: 80px;
+            left: 20%;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            color: black;
+            font-family: Rockwell;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .timer {
+            width: 90%;
+            position: absolute;
+            bottom: 20px;
+            left: 5%;
+            font-size: 15px;
+            font-weight: 700;
+            color: black;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 10px;
+            align-items: center;
+        }
+
+            .timer span {
+                background: white;
+                padding: 10px 13px;
+                border-radius: 30px;
+                font-family: Algerian;
+            }
+
+        .imgSec img {
+            height: 380px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .Deals {
+            height: 380px;
+            width: 19.5%;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        #Deal-note {
+            position: absolute;
+            left: 5px;
+            top: 20px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            background: rgb(96, 7, 44);
+            color: aliceblue;
+            font-family: Rockwell;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #add-wish {
+            position: absolute;
+            right: 10px;
+            top: 185px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+
+            #add-wish button {
+                background: transparent;
+                border: none;
+            }
+
+        .Deals a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .Deals-top {
+            height: 250px;
+            width: 100%;
+            background: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+            .Deals-top img {
+                height: 250px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+        .Deals-bottom {
+            background: white;
+            height: 130px;
+            width: 100%;
+            font-family: Rockwell;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+            .Deals-bottom p {
+                font-size: 13px;
+                text-align: center;
+            }
+
+        .Deals-price {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+        }
+
+            .Deals-price span {
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+        #deal-current-price {
+            font-size: 13px;
+        }
+
+        #deals-discount {
+            color: white;
+            background: rgb(13, 151, 95);
+            border-radius: 30px;
+            padding: 3px;
+        }
+
+        .decor-items {
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 400px;
+            width: 90%;
+        }
+
+            .decor-items img {
+                height: 250px;
+                width: 200px;
+                border-radius: 20px;
+            }
+
+        .fastDeliveryBanner {
+            height: 250px;
+            width: 90%;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+            .fastDeliveryBanner img {
+                height: 250px;
+                width: 70%;
+                border-radius: 10px;
+            }
+
+        /*index of home end here*/
+
+
+
+        /*login form start*/
+        .login-page {
+            margin: 10px 0;
+            min-height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: url("../../Content/Images/vaaree_logo_name.jpg");
+        }
+
+        /*wishlist page*/
+
+        .wishlist-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 20px;
+            align-items: center;
+            font-family: Rockwell;
+            padding: 10px;
+        }
+
+        .wishlist-box {
+            height: 250px;
+            width: 80%;
+            border-bottom: 2px solid rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wish-left {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 15px;
+            align-items: flex-start;
+            font-size: 16px;
+            font-weight: 200;
+            letter-spacing: 1px;
+        }
+
+            .wish-left img {
+                height: 200px;
+                width: 200px;
+                border-radius: 10px;
+            }
+
+        .wish-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 30px;
+            align-items: center;
+        }
+
+        #Delete-wish {
+            padding: 5px 20px;
+            background: red;
+            border-radius: 15px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="app-download-banner">
+        <a href="#"><img src="https://cdn.shopify.com/s/files/1/0632/2526/6422/files/announcement-desktop-appnew-10-min.jpg" /></a>
+    </div>
+
+
+
+    <div class="nav-wrap">
+        <div class="nav">
+
+            <div class="nav-start">
+
+                @Html.ActionLink("varee", "Index", "Home", new { @class = "applicationLogo" })
+                @*<a class="applicationLogo" href="@Url.Action("Index", "Home")"><img src="~/Content/Images/vaaree_logo_name.jpg" /></a>*@
+
+
+            </div>
+            <div class="nav-mid">
+                @Html.Partial("SearchBox", new VareeWeb.Models.ProductDetail())
+
+                <div id="search-results-container" class="search-results-container">
+                </div>
+
+            </div>
+            <div class="nav-end">
+                <div class="nav-end-links" id="user-nav">
+                    <i class="fa-regular fa-user"></i>
+                    <div class="user-options">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a href="@Url.Action("Logout", "Home")" class="auth-link">Log Out</a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Index", "Login")" class="auth-link">Log In</a>
+                        }
+                    </div>
+                </div>
+                <a class="nav-end-links" href="@Url.Action("WishList", "Home")">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+                <a id="cart" class="nav-end-links" href="@Url.Action("Cart", "Home")">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cartCount">0</span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="nav-down">
+            <div class="nav-start">
+                <div class="product-links">
+                    @Html.ActionLink("Bedding", "BedItems", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var categories = VareeWeb.Models.BeddingService.GetBeddingCategories();
+                            foreach (var category in categories)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+
+
+                </div>
+                <div class="product-links">
+                    @Html.ActionLink("Kitchen", "Kitchen", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var kitCat = VareeWeb.Models.BeddingService.GetKitchenCategories();
+                            foreach (var category in kitCat)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="product-links">
+                    @Html.ActionLink("Furnishings", "Furnishing", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var furnishCat = VareeWeb.Models.BeddingService.GetFurnishCategories();
+                            foreach (var category in furnishCat)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="product-links">
+                    @Html.ActionLink("Dining", "Dining", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var diningCat = VareeWeb.Models.BeddingService.GetDiningCategories();
+                            foreach (var category in diningCat)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="product-links">
+                    @Html.ActionLink("Decor", "Decor", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var decorCat = VareeWeb.Models.BeddingService.GetDecorCategories();
+                            foreach (var category in decorCat)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="product-links">
+                    @Html.ActionLink("Kids & Childrens", "Kids", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var kidCat = VareeWeb.Models.BeddingService.GetKidCategories();
+                            foreach (var category in kidCat)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="product-links">
+                    @Html.ActionLink("Storage & Organisers", "Storage", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var orgCat = VareeWeb.Models.BeddingService.GetOrganiserCategories();
+                            foreach (var category in orgCat)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="product-links">
+                    @Html.ActionLink("Bath", "Bath", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var bathCat = VareeWeb.Models.BeddingService.GetBathCategories();
+                            foreach (var category in bathCat)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="product-links">
+                    @Html.ActionLink("Garden", "Garden", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var gardenCat = VareeWeb.Models.BeddingService.GetGardenCategories();
+                            foreach (var category in gardenCat)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="product-links">
+                    @Html.ActionLink("Gifts", "Gifts", "Home", new { @class = "products" })
+                    <div class="product-category">
+
+                        @{
+                            var giftCat = VareeWeb.Models.BeddingService.GetGiftCategories();
+                            foreach (var category in giftCat)
+                            {
+
+                                <ul>
+                                    <li>
+                                        <h6>@category.Name</h6>
+                                        <ul>
+                                            @foreach (var type in category.Types)
+                                            {
+                                                <li>
+                                                    @Html.ActionLink(type, "Category", "Home", new { category = category.Name, type = type }, null
+                                                    )
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
+                        }
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div class="nav-end">
+                @Html.ActionLink("Return / Exchange", "Return", "Home", new { @class = "helpSec" })
+                <a class="helpSec" href="#" onclick="redirectToEmail()">help@varee.com</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div id="whatsapp-share">
+        <i class="fa-brands fa-whatsapp"></i>
+    </div>
+
+
+    @{
+        var wishAddedMessage = TempData["Msg"] as string;
+    }
+
+    @if (!string.IsNullOrEmpty(wishAddedMessage))
+    {
+        <div id="wishAddedMessage" class="alert">
+            @wishAddedMessage
+        </div>
+
+        <script type="text/javascript">
+
+            setTimeout(function () {
+                var messageElement = document.getElementById("wishAddedMessage");
+                if (messageElement) {
+                    messageElement.style.opacity = 0;
+                    setTimeout(function () {
+                        messageElement.style.display = "none";
+                    }, 500);
+                }
+            }, 3000);
+
+
+        </script>
+    }
+
+
+
+
+    @RenderBody()
+
+    <div class="footer">
+        @{
+            var footerCategory = VareeWeb.Models.BeddingService.GetFooterCategories();
+
+            foreach (var cat in footerCategory)
+            {
+                <div class="foot-cat-box">
+                    <h6>@cat.Name</h6>
+                    <ul>
+                        @foreach (var type in cat.Types)
+                        {
+                            <li>
+                                @Html.ActionLink(type, "Category", "Home", new { category = cat.Name, type = type }, null
+                                )
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+        }
+
+    </div>
+
+    <div class="copyright-policy">
+        <div class="copy-policy">
+            @Html.ActionLink("Exchange Policy", "Policy", "Home")
+            @Html.ActionLink("Terms of Service", "Policy", "Home")
+            @Html.ActionLink("Privacy Policy", "Policy", "Home")
+            @Html.ActionLink("Refund Policy", "Policy", "Home")
+            @Html.ActionLink("Shipping Policy", "Policy", "Home")
+        </div>
+        <div class="copy-policy">
+            Copyright ? 2024 @Html.ActionLink("House of Vaaree", "Copyright", "Home", new { @id = "copyrightPolicy" }) all rights reserved.
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dynamicSearchBox').on('input', function () {
+                const query = $(this).val();
+
+                if (query.trim() === "") {
+                    $('#search-results-container').html('');
+                    $('#search-results-container').css('display', 'none');
+                    return;
+                }
+
+                $.ajax({
+                    url: '/Home/SearchProducts',
+                    type: 'GET',
+                    data: { query: query },
+                    success: function (data) {
+                        $('#search-results-container').html(data);
+                        $('#search-results-container').css('display', 'flex');
+                    },
+                    error: function () {
+                        $('#search-results-container').html('<p>Error fetching data.</p>');
+                        $('#search-results-container').css('display', 'flex');
+                    }
+                });
+            });
+        });
+
+
+
+    </script>
+    <script>
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const dynamicWords = ["Dining Sets", "Bedsheets", "Cushion Covers"];
+
+            let index = 0;
+
+            const searchBox = document.getElementById("dynamicSearchBox");
+
+            if (!searchBox) {
+                console.error("Search box not found! Check your HTML.");
+                return;
+            }
+
+            function updatePlaceholder() {
+                const staticText = "Search for";
+                searchBox.setAttribute("placeholder", `${staticText} ${dynamicWords[index]}`);
+                index = (index + 1) % dynamicWords.length;
+            }
+
+            setInterval(updatePlaceholder, 1000);
+        });
+    </script>
+
+    <script>
+        function updateTimer() {
+            const now = new Date();
+            const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
+            const remainingTime = endOfDay - now;
+
+            if (remainingTime <= 0) {
+                document.getElementById('timer').innerText = "The day has ended!";
+                return;
+            }
+
+            const hours = Math.floor(remainingTime / (1000 * 60 * 60));
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            document.getElementById('hours').innerText =
+                `${hours} h`;
+            document.getElementById('min').innerText =
+                `${minutes} m`;
+            document.getElementById('sec').innerText =
+                `${seconds} s`;
+        }
+
+        setInterval(updateTimer, 1000);
+
+        updateTimer();</script>
+
+
+</body>
+</html>

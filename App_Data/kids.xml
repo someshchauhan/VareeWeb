@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HomeDecor>
+	<Category name="KIDS LINENS &amp; FURNISHINGS">
+		<Type>Crib Bedding Essentials</Type>
+		<Type>Kids Bedsheets</Type>
+		<Type>Kids Mattress Protector</Type>
+		<Type>Kids Cushions &amp; Bolster Covers</Type>
+		<Type>Kids Curtains</Type>
+		<Type>Kids Aprons &amp; Gloves</Type>
+		<Type>Kids Mats &amp; Rugs</Type>
+		<Type>Kids Toys</Type>
+	</Category>
+	<Category name="KIDS DECOR &amp; ACCESSORIES">
+		<Type>Kids Clocks</Type>
+		<Type>Kids Photo frames</Type>
+		<Type>Kids Wall Plates</Type>
+		<Type>Kids Wall Decor &amp; Accents</Type>
+		<Type>Kids Lamps</Type>
+		<Type>Kids Wall Art &amp; Paintings</Type>
+		<Type>Kids Pin Boards</Type>
+	</Category>
+	<Category name="KIDS FEEDING &amp; DINING ESSENTIALS">
+		<Type>Kids Tiffins &amp; Lunch Box</Type>
+		<Type>Kids Bottles &amp; Sippers</Type>
+		<Type>Kids Dining Plates &amp; Sets</Type>
+	</Category>
+	<Category name="KIDS STORAGE ESSENTIALS">
+		<Type>Kids Storage Essential</Type>
+		<Type>Kids Desk Organisers</Type>
+	</Category>
+</HomeDecor>

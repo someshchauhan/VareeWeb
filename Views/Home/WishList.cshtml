@@ -1,0 +1,48 @@
+﻿@model IEnumerable<VareeWeb.Models.ProductDetail>
+
+
+@{
+    ViewBag.Title = "WishList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h5 style="font-family: Rockwell; padding: 40px 50px; letter-spacing: 1px; font-weight: 600;" >My Wishlist</h5>
+
+<div class="wishlist-container">
+
+    @if (Model.Any())
+    {
+        foreach (var i in Model)
+        {
+            <div class="wishlist-box">
+                <div class="wish-left">
+                    <img src="@i.ImageURL" alt="@i.ProductName" />
+                    <span>@i.ProductName</span>
+                </div>
+                <div class="wish-right">
+                    @using (Html.BeginForm("AddToWishlist", "Home", FormMethod.Post))
+                    {
+                        @Html.Hidden("productId", i.ProductID) <!-- Hidden input for product ID -->
+                        <button style="border: none"><span id="Delete-wish"><i class="fa-solid fa-trash-can"></i></span></button>
+                    }
+                    <span id="deal-current-price"><strong>&#8377; @i.Price    </strong><span><s>&#8377; @i.MRP</s></span></span>
+
+                    <span style="background:limegreen; padding: 10px 30px; border-radius: 10px;">@i.DiscountPercentage% Off</span>
+
+                    <button class="btn btn-warning"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <h5 style="font-family: Rockwell; padding: 40px 50px; letter-spacing: 1px; font-weight: 600; text-align: center;">Your Wishlist is Empty</h5>
+    }
+</div>
+
+
+
+

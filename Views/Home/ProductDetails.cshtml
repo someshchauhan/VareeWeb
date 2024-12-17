@@ -1,0 +1,134 @@
+﻿@model VareeWeb.Models.ProductDetail
+
+@{
+    ViewBag.Title = "ProductDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h5 style="padding: 10px 50px; font-weight: 400; letter-spacing: 1px; margin-top: 20px; font-size: 14px; ">@Model.ProductName</h5>
+<div class="product-detail">
+    <div class="product-detail-box">
+        <img src="@Model.ImageURL" alt="@Model.ProductName" />
+    </div>
+    <div class="product-detail-box">
+
+        <span style="font-size: 12px; font-weight: 400;">@Model.ProductName</span>
+        <div class="product-price">
+            <span style="font-size: 18px; font-weight: 600; letter-spacing: 1px;"><strong>&#8377; @Model.Price    </strong><span style="font-size: 14px; font-weight: 500; letter-spacing: 1px;"><s>&#8377; @Model.MRP</s></span></span>
+            <span style="background:limegreen; color: aliceblue; font-weight: 800; letter-spacing: 1px; padding: 10px 30px; border-radius: 10px;">@Model.DiscountPercentage% Off</span>
+        </div>
+
+        <div class="vouchers">
+            <img src="~/Content/Images/home/Voucher.jpg" />
+        </div>
+
+        <div class="action">
+            @using (Html.BeginForm("AddToWishlist", "Home", FormMethod.Post))
+            {
+                @Html.Hidden("productId", Model.ProductID) <!-- Hidden input for product ID -->
+                <button style="padding: 10px 20px; font-size: 20px;">
+                    <i id="heartIcon" class="fa-regular fa-heart"></i>
+                </button>
+            }
+
+           
+
+            @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post))
+            {
+                @Html.Hidden("productId", Model.ProductID) <!-- Hidden input for product ID -->
+                <button style="padding: 10px 90px; background: rgb(229, 177, 13); border: none; letter-spacing: 1px;">ADD TO CART</button>
+            }
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="fixed-action">
+    @using (Html.BeginForm("AddToWishlist", "Home", FormMethod.Post))
+    {
+        @Html.Hidden("productId", Model.ProductID) <!-- Hidden input for product ID -->
+        <button style="padding: 10px 20px; font-size: 20px;">
+            <i id="heartIcon" class="fa-regular fa-heart"></i>
+        </button>
+    }
+    
+
+    @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post))
+    {
+        @Html.Hidden("productId", Model.ProductID) <!-- Hidden input for product ID -->
+        <button style="padding: 10px 90px; background: rgb(229, 177, 13); border: none; letter-spacing: 1px;">ADD TO CART</button>
+    }
+</div>
+
+<style>
+    .product-detail {
+        height: 60vh;
+        width: 80%;
+        margin: 15px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-detail-box {
+        height: 500px;
+        width: 49%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 5px;
+        align-items: center;
+    }
+
+        .product-detail-box img {
+            height: 450px;
+            width: 450px;
+            border-radius: 5px;
+        }
+
+    .product-price {
+        background: rgb(237, 230, 246);
+        border-radius: 5px;
+        padding: 30px 50px;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+        align-items: center;
+        font-family: Rockwell;
+    }
+
+    .vouchers img {
+        height: 150px;
+        width: 400px;
+        border-radius: 10px;
+    }
+
+    .action {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    button {
+        font-family: Arial;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .fixed-action {
+        height: 100px;
+        width: 100%;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        border-top: 1px solid rgba(0,0,0,0.3);
+    }
+</style>

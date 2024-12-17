@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HomeDecor>
+	<Category name="CUSHION COVERS">
+		<Type>Printed Cushions</Type>
+		<Type>Tufted Cushions</Type>
+		<Type>Solid Cushions</Type>
+		<Type>Woven Cushions</Type>
+		<Type>Embroidered Cushions</Type>
+		<Type>Cushion Cover Sets</Type>
+	</Category>
+	<Category name="CUSHION COVERS BY SIZE">
+		<Type>12x12 Inch Cushion Covers</Type>
+		<Type>16x16 Inch Cushion Covers</Type>
+		<Type>18x18 Inch Cushion Covers</Type>
+		<Type>24x24 Inch Cushion Covers</Type>
+	</Category>
+	<Category name="OTHERS">
+		<Type>Cushion Fillers</Type>
+		<Type>Floor Cushions</Type>
+		<Type>Curtains</Type>
+		<Type>Throws</Type>
+		<Type>Diwan Sets</Type>
+		<Type>Rugs &amp; Carpets</Type>
+		<Type>Sofa &amp; Chair Covers</Type>
+		<Type>Living Room Carpets</Type>
+	</Category>
+	
+</HomeDecor>

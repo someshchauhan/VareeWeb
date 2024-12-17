@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<HomeDecor>
+	<Category name="GIFTS BY SPECIAL DAYS">
+		<Type>Friendship Day Gifts</Type>
+		<Type>New Year Gifts</Type>
+		<Type>Birthday Gifts</Type>
+		<Type>Wedding Gifts</Type>
+		<Type>Anniversary Gifts</Type>
+		<Type>Valentine's Day Gifts</Type>
+	</Category>
+	<Category name="GIFTS BY OCCASION">
+		<Type>House Warming Gifts</Type>
+		<Type>Return Gifts</Type>
+		<Type>Baby Shower Gifts</Type>
+		<Type>Farewell &amp; Thank You Gifts</Type>
+		<Type>Corporate Gifts</Type>
+	</Category>
+	<Category name="GIFTS FOR WOMEN">
+		<Type>Gifts For Girlfriend</Type>
+		<Type>Gifts For Wife</Type>
+		<Type>Gifts For Sister</Type>
+		<Type>Gifts For Mother</Type>
+		<Type>Gifts For Couples</Type>
+		<Type>Gifts For Friend/Best Friend</Type>
+	</Category>
+	<Category name="GIFTS FOR MEN">
+		<Type>Gifts For Boyfriend</Type>
+		<Type>Gifts For Husband</Type>
+		<Type>Gifts For Brother</Type>
+		<Type>Gifts For Father</Type>
+		<Type>Gifts For Couples</Type>
+		<Type>Gifts For Friend/Best Friend</Type>
+	</Category>
+	<Category name="GIFTS BY FESTIVALS">
+		<Type>Rakhi Gifts</Type>
+		<Type>Diwali Gifts</Type>
+		<Type>Christmas Gifts</Type>
+	</Category>
+	<Category name="GIFTS BY BUDGET">
+		<Type>Gifts &lt; ₹499</Type>
+		<Type>Gifts &lt; ₹999</Type>
+		<Type>Gifts &lt; ₹1499</Type>
+		<Type>Gifts &lt; ₹1999</Type>
+	</Category>
+</HomeDecor>

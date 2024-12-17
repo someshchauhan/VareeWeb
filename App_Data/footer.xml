@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Decor>
+	<Category name="Bedroom Decor">
+		<Type>All Bedding</Type>
+		<Type>Bedsheets</Type>
+		<Type>Comforters &amp; AC Quilts</Type>
+		<Type>Dohars, Razai &amp; Blankets</Type>
+		<Type>Duvet Covers</Type>
+		<Type>Bedcovers</Type>
+		<Type>Pillow &amp; Bolster Covers</Type>
+		<Type>Mattress Protectors</Type>
+		<Type>Bedding Set</Type>
+	</Category>
+	<Category name="Living Room Decor">
+		<Type>Cushion Fillers</Type>
+		<Type>Floor Cushions</Type>
+		<Type>Curtains</Type>
+		<Type>Throws</Type>
+		<Type>Diwan Sets</Type>
+		<Type>Rugs &amp; Carpets</Type>
+		<Type>Sofa &amp; Chair Covers</Type>
+		<Type>Living Room Carpets</Type>
+	</Category>
+	<Category name="Home Decorations">
+		<Type>All Home Decor</Type>
+		<Type>Lamps &amp; Lightings</Type>
+		<Type>Wall Decor</Type>
+		<Type>Showpieces, Vases &amp; Accent Bowls</Type>
+		<Type>Artificial Flowers &amp; Plants</Type>
+		<Type>Clocks</Type>
+		<Type>Religious &amp; Spiritual Items</Type>
+		<Type>Mirrors</Type>
+		<Type>Candles &amp; Aroma</Type>
+		<Type>Candle Stand &amp; Holders</Type>
+		<Type>Accent Furnitures</Type>
+	</Category>
+	<Category name="Kitchen Decor">
+		<Type>All Kitchen Decor</Type>
+		<Type>Storage &amp; Containers</Type>
+		<Type>Containers and Jars</Type>
+		<Type>Lunch Boxes</Type>
+		<Type>Masala Boxes</Type>
+		<Type>Cookware</Type>
+		<Type>Bakeware</Type>
+		<Type>Kitchen Linens</Type>
+	</Category>
+	<Category name="Dining Decor">
+		<Type>All Dining Essentials</Type>
+		<Type>Mugs, Cups &amp; Drinkware</Type>
+		<Type>Coffee Mugs</Type>
+		<Type>Bowls</Type>
+		<Type>Cutlery &amp; Salad Spoons</Type>
+		<Type>Trays &amp; Platters</Type>
+		<Type>Dinner Plates &amp; Quarter Plates</Type>
+		<Type>Dinner Sets</Type>
+		<Type>Barware</Type>
+		<Type>Ashtrays</Type>
+	</Category>
+	<Category name="Bath Accessories">
+		<Type>All Bath Essentials</Type>
+		<Type>Bath Linens</Type>
+		<Type>Bath Mats</Type>
+		<Type>Bath Towels</Type>
+		<Type>Bathroom Accessories</Type>
+		<Type>Soap Dish &amp; Dispensers</Type>
+	</Category>
+	<Category name="Garden">
+		<Type>All Garden Decor</Type>
+		<Type>Pots &amp; Planters</Type>
+		<Type>Gardening Accessories</Type>
+		<Type>Plants &amp; Seeds</Type>
+	</Category>
+	<Category name="Gifts">
+		<Type>All Gifts</Type>
+		<Type>Gifts By Occasion</Type>
+		<Type>Gifts By Festivals</Type>
+		<Type>Gifts By Special Days</Type>
+		<Type>Gifts for Men</Type>
+		<Type>Gifts For Women</Type>
+		<Type>Gifts By Budget</Type>
+		<Type>Gift Cards</Type>
+		<Type>Gift Boxes</Type>
+	</Category>
+	<Category name="Get in Touch">
+		<Type>Request Return/Exchange</Type>
+		<Type>Track Your Order</Type>
+		<Type>Work At Vaaree</Type>
+		<Type>Contact Us</Type>
+		<Type>Partner with Vaaree</Type>
+		<Type>Affiliate &amp; Partnership</Type>
+		<Type>help@vaaree.com</Type>
+	</Category>
+	<Category name="Popular Categories">
+		<Type>Bedding</Type>
+		<Type>Furnishings</Type>
+		<Type>Kitchen</Type>
+		<Type>Dining</Type>
+		<Type>Home Decor</Type>
+		<Type>Bath</Type>
+		<Type>Garden</Type>
+	</Category>
+	<Category name="Inspiration">
+		<Type>Corporate Gifts</Type>
+		<Type>Christmas Gifts</Type>
+		<Type>Christmas Ornaments &amp; Decor</Type>
+	</Category>
+	<Category name="Know More">
+		<Type>Vaaree Journals</Type>
+		<Type>Pro Tips For Product Care</Type>
+		<Type>About Us</Type>
+		<Type>Vaaree Press Room</Type>
+		<Type>Terms of Service</Type>
+		<Type>Refund Policy</Type>
+		<Type>HTML Sitemap</Type>
+	</Category>
+</Decor>

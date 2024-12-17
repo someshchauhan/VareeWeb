@@ -1,0 +1,41 @@
+﻿@model VareeWeb.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/login-signup.css" rel="stylesheet" />
+
+
+
+
+<div class="login-page">
+
+
+    <div class="main">
+
+        
+
+        <div class="login">
+
+            <form method="post">
+                <label for="chk" aria-hidden="true">Login</label>
+                @Html.TextBoxFor(m => m.UserName, new { placeholder = "User Name" })
+                @Html.TextBoxFor(m => m.Password, new { placeholder = "Password" })
+                <button>Login</button>
+            </form>
+            <h4>@Html.ActionLink("Sign Up", "SignUp", "Login", new { id = "signUpLink" })</h4>
+
+            <h4>@ViewBag.Msg</h4>
+            <h4 id="signupSuccess">@TempData["AccCreation"]</h4>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+

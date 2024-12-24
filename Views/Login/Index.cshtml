@@ -15,14 +15,14 @@
 
     <div class="main">
 
-        
+        <span>@Session["ReturnURl"]</span>
 
         <div class="login">
 
             <form method="post">
                 <label for="chk" aria-hidden="true">Login</label>
                 @Html.TextBoxFor(m => m.UserName, new { placeholder = "User Name" })
-                @Html.TextBoxFor(m => m.Password, new { placeholder = "Password" })
+                @Html.TextBoxFor(m => m.Password, new { placeholder = "Password", Type = "password" })
                 <button>Login</button>
             </form>
             <h4>@Html.ActionLink("Sign Up", "SignUp", "Login", new { id = "signUpLink" })</h4>

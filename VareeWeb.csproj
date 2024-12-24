@@ -165,15 +165,15 @@
     <Content Include="Content\videos\celebs\shwetambri.mp4" />
     <Content Include="Content\videos\celebs\vineeta.mp4" />
     <Content Include="Global.asax" />
-    <Content Include="Models\ProductDetailsModel.Context.tt">
+    <Content Include="Models\VareeWebModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ProductDetailsModel.Context.cs</LastGenOutput>
-      <DependentUpon>ProductDetailsModel.edmx</DependentUpon>
+      <DependentUpon>VareeWebModel.edmx</DependentUpon>
+      <LastGenOutput>VareeWebModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ProductDetailsModel.tt">
+    <Content Include="Models\VareeWebModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductDetailsModel.edmx</DependentUpon>
-      <LastGenOutput>ProductDetailsModel.cs</LastGenOutput>
+      <DependentUpon>VareeWebModel.edmx</DependentUpon>
+      <LastGenOutput>VareeWebModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -195,7 +195,7 @@
     <Compile Include="Models\BeddingCategory.cs" />
     <Compile Include="Models\BeddingService.cs" />
     <Compile Include="Models\Cart.cs">
-      <DependentUpon>ProductDetailsModel.tt</DependentUpon>
+      <DependentUpon>VareeWebModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\decorCat.cs" />
     <Compile Include="Models\diningCat.cs" />
@@ -207,29 +207,29 @@
     <Compile Include="Models\KitchenCat.cs" />
     <Compile Include="Models\organiseCat.cs" />
     <Compile Include="Models\ProductDetail.cs">
-      <DependentUpon>ProductDetailsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductDetailsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDetailsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductDetailsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDetailsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductDetailsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDetailsModel.edmx</DependentUpon>
+      <DependentUpon>VareeWebModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\searchQurery.cs" />
     <Compile Include="Models\User.cs">
-      <DependentUpon>ProductDetailsModel.tt</DependentUpon>
+      <DependentUpon>VareeWebModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VareeWebModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VareeWebModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VareeWebModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VareeWebModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VareeWebModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VareeWebModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Wishlist.cs">
-      <DependentUpon>ProductDetailsModel.tt</DependentUpon>
+      <DependentUpon>VareeWebModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -251,12 +251,12 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <EntityDeploy Include="Models\ProductDetailsModel.edmx">
+    <EntityDeploy Include="Models\VareeWebModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductDetailsModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>VareeWebModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ProductDetailsModel.edmx.diagram">
-      <DependentUpon>ProductDetailsModel.edmx</DependentUpon>
+    <Content Include="Models\VareeWebModel.edmx.diagram">
+      <DependentUpon>VareeWebModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -275,6 +275,8 @@
     <Content Include="Views\Home\Cart.cshtml" />
     <Content Include="Views\Login\SignUp.cshtml" />
     <Content Include="Views\Home\ProductDetails.cshtml" />
+    <Content Include="Views\Home\ProductByCategory.cshtml" />
+    <Content Include="Views\Home\ProductBySubCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

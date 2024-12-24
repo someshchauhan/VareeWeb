@@ -18,12 +18,13 @@ namespace VareeWeb.Models
         public string ProductName { get; set; }
         public string Description { get; set; }
         public int DealOfTheDay { get; set; }
-        public System.DateTime DealEndsIn { get; set; }
         public decimal Price { get; set; }
         public decimal MRP { get; set; }
         public int DiscountPercentage { get; set; }
         public string AvailabilityStatus { get; set; }
         public int Stock { get; set; }
         public string ImageURL { get; set; }
+        public string ProductCategory { get; set; }
+        public string SubCategory { get; set; }
     }
 }

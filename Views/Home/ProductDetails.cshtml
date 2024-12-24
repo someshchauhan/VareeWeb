@@ -26,7 +26,7 @@
         <div class="action">
             @using (Html.BeginForm("AddToWishlist", "Home", FormMethod.Post))
             {
-                @Html.Hidden("productId", Model.ProductID) <!-- Hidden input for product ID -->
+                @Html.Hidden("productId", Model.ProductID) 
                 <button style="padding: 10px 20px; font-size: 20px;">
                     <i id="heartIcon" class="fa-regular fa-heart"></i>
                 </button>
@@ -36,7 +36,7 @@
 
             @using (Html.BeginForm("AddToCart", "Home", FormMethod.Post))
             {
-                @Html.Hidden("productId", Model.ProductID) <!-- Hidden input for product ID -->
+                @Html.Hidden("productId", Model.ProductID) 
                 <button style="padding: 10px 90px; background: rgb(229, 177, 13); border: none; letter-spacing: 1px;">ADD TO CART</button>
             }
 

@@ -1,4 +1,5 @@
-﻿* {
+﻿/*layout page start*/
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -207,6 +208,49 @@ body {
     color: #333;
 }
 
+.user-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 120px;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+#user-nav {
+    position: relative;
+    cursor: pointer;
+}
+
+    #user-nav:hover .user-options {
+        display: block;
+    }
+
+.auth-link {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 3px 5px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+    .auth-link:hover {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+
+
+
+
+
 #cart {
     position: relative;
 }
@@ -233,10 +277,10 @@ body {
 
 .products, .helpSec {
     font-size: 14px;
-    font-weight: 400;
-    color: black;
+    font-weight: 300;
+    color: #333;
     text-decoration: none;
-    font-family: Rockwell;
+    font-family: 'Bernard MT';
     letter-spacing: 1px;
     height: 100%;
     padding: 3px 3px;
@@ -305,7 +349,185 @@ body {
     color: rgba(0,0,0,0.3);
 }
 
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    background: rgb(250, 244, 244);
+    padding: 20px;
+}
 
+.foot-cat-box {
+    padding: 10px;
+}
+
+    .foot-cat-box h6 {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: Rockwell;
+    }
+
+    .foot-cat-box ul li {
+        padding: 5px;
+        list-style: none;
+    }
+
+        .foot-cat-box ul li a {
+            text-decoration: none;
+            color: black;
+            font-family: Rockwell;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+.copy-policy {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    padding: 20px 30px;
+    font-family: Rockwell;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+    .copy-policy a {
+        text-decoration: none;
+        color: rgba(0,0,0,0.7);
+        font-family: Rockwell;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-size: 14px;
+    }
+
+#copyrightPolicy {
+    color: rgb(205, 170, 21);
+}
+
+#whatsapp-share {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 50px;
+    right: 5px;
+    border-radius: 50%;
+    background: limegreen;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+}
+
+    #whatsapp-share i {
+        font-size: 40px;
+    }
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    background: rgb(250, 244, 244);
+    padding: 20px;
+}
+
+.foot-cat-box {
+    padding: 10px;
+}
+
+    .foot-cat-box h6 {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: Rockwell;
+    }
+
+    .foot-cat-box ul li {
+        padding: 5px;
+        list-style: none;
+    }
+
+        .foot-cat-box ul li a {
+            text-decoration: none;
+            color: black;
+            font-family: Rockwell;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+.copy-policy {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    padding: 20px 30px;
+    font-family: Rockwell;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+    .copy-policy a {
+        text-decoration: none;
+        color: rgba(0,0,0,0.7);
+        font-family: Rockwell;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-size: 14px;
+    }
+
+#copyrightPolicy {
+    color: rgb(205, 170, 21);
+}
+
+#whatsapp-share {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 50px;
+    right: 5px;
+    border-radius: 50%;
+    background: limegreen;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+}
+
+    #whatsapp-share i {
+        font-size: 40px;
+    }
+
+/*layout page end here*/
+
+/*index of home start */
+
+#wishAddedMessage {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
 
 .banner {
     height: 600px;
@@ -411,7 +633,7 @@ body {
 .star-box {
     height: 400px;
     width: 24.25%;
-    font-family: Rockwell;
+    letter-spacing: 1px;
     font-weight: 500;
 }
 
@@ -546,7 +768,7 @@ body {
     background: white;
     height: 130px;
     width: 100%;
-    font-family: Rockwell;
+    font-family: Arial;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -609,98 +831,15 @@ body {
         border-radius: 10px;
     }
 
+/*index of home end here*/
 
-.footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 20px;
-    background: rgb(250, 244, 244);
-    padding: 20px;
-}
 
-.foot-cat-box {
-    padding: 10px;
-}
 
-    .foot-cat-box h6 {
-        text-align: center;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        font-family: Rockwell;
-    }
 
-    .foot-cat-box ul li {
-        padding: 5px;
-        list-style: none;
-    }
 
-        .foot-cat-box ul li a {
-            text-decoration: none;
-            color: black;
-            font-family: Rockwell;
-            font-weight: 600;
-            letter-spacing: 1px;
-            font-size: 13px;
-        }
 
-.copy-policy {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    align-items: center;
-    padding: 20px 30px;
-    font-family: Rockwell;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 14px;
-}
 
-    .copy-policy a {
-        text-decoration: none;
-        color: rgba(0,0,0,0.7);
-        font-family: Rockwell;
-        font-weight: 600;
-        letter-spacing: 1px;
-        font-size: 14px;
-    }
-
-#copyrightPolicy {
-    color: rgb(205, 170, 21);
-}
-
-#whatsapp-share {
-    position: fixed;
-    height: 50px;
-    width: 50px;
-    bottom: 50px;
-    right: 5px;
-    border-radius: 50%;
-    background: limegreen;
-    color: aliceblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
-}
-
-    #whatsapp-share i {
-        font-size: 40px;
-    }
-/*login form start*/
-.login-page {
-    margin: 10px 0;
-    min-height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: url("../../Content/Images/vaaree_logo_name.jpg");
-}
-
-/*wishlist page*/
+/*wishlist and cart end here */
 
 .wishlist-container {
     width: 100%;
@@ -751,3 +890,5 @@ body {
     background: red;
     border-radius: 15px;
 }
+
+/*wishlist and Cart end here*/

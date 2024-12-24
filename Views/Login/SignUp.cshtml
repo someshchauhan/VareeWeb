@@ -23,7 +23,8 @@
                     <label for="chk" aria-hidden="true">Sign Up</label>
                     @Html.TextBoxFor(m => m.UserName, new { placeholder = "User Name" })
                     @Html.TextBoxFor(m => m.Email, new { placeholder = "Email" })
-                    @Html.TextBoxFor(m => m.Password, new { placeholder = "Password" })
+                    @Html.TextBoxFor(m => m.Password, new { placeholder = "Password", Type = "password" })
+
                     <button>Sign Up</button>
                 }
 

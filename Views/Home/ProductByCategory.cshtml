@@ -1,0 +1,66 @@
+﻿@model List<VareeWeb.Models.ProductDetail>
+
+@{
+    ViewBag.Title = "ProductByCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .product-list
+    {
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+        align-items: flex-start;
+    }
+</style>
+
+
+
+@if (Model.Any())
+{
+
+    <h4 style="font-family: 'Bernard MT'; font-weight: 500; color: #333; letter-spacing: 1px; padding: 10px 30px;">@TempData["CategoryName"]</h4>
+    
+        <div class="product-list">
+            @foreach (var item in Model)
+            {
+                <div class="Deals" style="box-shadow: 0 0 5px rgba(0,0,0,0.3);">
+                    <a href="@Url.Action("ProductDetails", "Home", new {id = item.ProductID})">
+                        <div class="Deals-top">
+                            <img src="@item.ImageURL" />
+                        </div>
+                        <div class="Deals-bottom">
+                            <p>@item.ProductName</p>
+                            <div class="Deals-price">
+                                <span id="deal-current-price"><strong>&#8377; @item.Price</strong></span>
+                                <span><s>&#8377; @item.MRP</s></span>
+                                <span id="deals-discount">@item.DiscountPercentage% Off</span>
+                            </div>
+                        </div>
+                    </a>
+                    @if (item.DealOfTheDay == 1)
+                    {
+                        <div id="Deal-note">
+                            Deal of the Day
+                        </div>
+                    }
+                    @using (Html.BeginForm("AddToWishlist", "Home", FormMethod.Post))
+                    {
+                        @Html.Hidden("productId", item.ProductID)
+                        <button type="submit" id="add-wish">
+                            <i id="heartIcon" class="fa-regular fa-heart"></i>
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+
+}
+else
+{
+    <p style="font-family: 'Bernard MT'; font-weight: 400; text-align:center; letter-spacing: 1px; margin: 100px auto;">No Products for this Category.</p>
+}

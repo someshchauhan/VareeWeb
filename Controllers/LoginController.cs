@@ -12,7 +12,7 @@ namespace VareeWeb.Controllers
 {
     public class LoginController : Controller
     {
-        VareeStroreEntities db = new VareeStroreEntities();
+        VareeStroreEntities1 db = new VareeStroreEntities1();
 
         // GET: Login
         public ActionResult Index()
@@ -29,29 +29,26 @@ namespace VareeWeb.Controllers
                 FormsAuthentication.SetAuthCookie(u.UserName, false);
                 Session["userName"] = u.UserName;
 
-                if (!string.IsNullOrEmpty(ReturnUrl))
+                var TempUrl = Session["ReturnURl"] as string;
+                if (!string.IsNullOrEmpty(TempUrl))
                 {
-                    // Extract only the path from the ReturnUrl
-                    Uri returnUrlUri = new Uri(Request.Url, ReturnUrl);
-                    string actionPath = returnUrlUri.AbsolutePath.TrimStart('/');
-
-                    // Redirect to the action if it's valid
-                    if (Url.IsLocalUrl(ReturnUrl))
-                    {
-                        return Redirect("/" + actionPath);
-                    }
+                    ReturnUrl = TempUrl;
                 }
 
-                // Redirect to home if ReturnUrl is null or invalid
+                if (!string.IsNullOrEmpty(ReturnUrl) && Url.IsLocalUrl(ReturnUrl))
+                {
+                    return Redirect(ReturnUrl);
+                }
+
                 return RedirectToAction("Index", "Home");
             }
             else
             {
                 ViewBag.Msg = "Login Failed";
+                return View();
             }
-
-            return View();
         }
+
 
 
         public bool IsValid(User u)

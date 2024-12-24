@@ -13,10 +13,10 @@ namespace VareeWeb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class VareeStroreEntities : DbContext
+    public partial class VareeStroreEntities1 : DbContext
     {
-        public VareeStroreEntities()
-            : base("name=VareeStroreEntities")
+        public VareeStroreEntities1()
+            : base("name=VareeStroreEntities1")
         {
         }
     
@@ -25,9 +25,9 @@ namespace VareeWeb.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<ProductDetail> ProductDetails { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Wishlist> Wishlists { get; set; }
-        public virtual DbSet<Cart> Carts { get; set; }
     }
 }

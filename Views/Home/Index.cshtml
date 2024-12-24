@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VareeWeb.Models.ProductDetail>
+﻿@model List<VareeWeb.Models.ProductDetail>
 
 
 
@@ -76,7 +76,7 @@
             </div>
             @using (Html.BeginForm("AddToWishlist", "Home", FormMethod.Post))
             {
-                @Html.Hidden("productId", product.ProductID) <!-- Hidden input for product ID -->
+                @Html.Hidden("productId", product.ProductID) 
                 <button type="submit" id="add-wish">
                     <i id="heartIcon" class="fa-regular fa-heart"></i>
                 </button>

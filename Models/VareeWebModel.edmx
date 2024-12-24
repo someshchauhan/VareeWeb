@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="VareeStroreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="VareeStroreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="Id" />
@@ -21,13 +21,14 @@
           <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Description" Type="text" Nullable="false" />
           <Property Name="DealOfTheDay" Type="int" Nullable="false" />
-          <Property Name="DealEndsIn" Type="datetime" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="MRP" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="DiscountPercentage" Type="int" Nullable="false" />
           <Property Name="AvailabilityStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Stock" Type="int" Nullable="false" />
           <Property Name="ImageURL" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProductCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubCategory" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -52,10 +53,19 @@
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Wishlist" EntityType="Self.Wishlist" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VareeStroreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int64" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="ProductDetail">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -64,28 +74,23 @@
           <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DealOfTheDay" Type="Int32" Nullable="false" />
-          <Property Name="DealEndsIn" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="MRP" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="DiscountPercentage" Type="Int32" Nullable="false" />
           <Property Name="AvailabilityStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Stock" Type="Int32" Nullable="false" />
           <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="VareeStroreEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ProductDetails" EntityType="Self.ProductDetail" />
-          <EntitySet Name="Users" EntityType="VareeStroreModel.User" />
-          <EntitySet Name="Wishlists" EntityType="VareeStroreModel.Wishlist" />
-          <EntitySet Name="Carts" EntityType="VareeStroreModel.Cart" />
-        </EntityContainer>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Wishlist">
           <Key>
@@ -95,20 +100,27 @@
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="Cart">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductId" Type="Int64" Nullable="false" />
-          <Property Name="UserId" Type="Int32" Nullable="false" />
-        </EntityType>
+        <EntityContainer Name="VareeStroreEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Carts" EntityType="Self.Cart" />
+          <EntitySet Name="ProductDetails" EntityType="Self.ProductDetail" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Wishlists" EntityType="Self.Wishlist" />
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="VareeStroreModelStoreContainer" CdmEntityContainer="VareeStroreEntities">
+        <EntityContainerMapping StorageEntityContainer="VareeStroreModelStoreContainer" CdmEntityContainer="VareeStroreEntities1">
+          <EntitySetMapping Name="Carts">
+            <EntityTypeMapping TypeName="VareeStroreModel.Cart">
+              <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ProductDetails">
             <EntityTypeMapping TypeName="VareeStroreModel.ProductDetail">
               <MappingFragment StoreEntitySet="ProductDetails">
@@ -116,41 +128,33 @@
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DealOfTheDay" ColumnName="DealOfTheDay" />
-                <ScalarProperty Name="DealEndsIn" ColumnName="DealEndsIn" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="MRP" ColumnName="MRP" />
                 <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
                 <ScalarProperty Name="AvailabilityStatus" ColumnName="AvailabilityStatus" />
                 <ScalarProperty Name="Stock" ColumnName="Stock" />
                 <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+                <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="VareeStroreModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Wishlists">
             <EntityTypeMapping TypeName="VareeStroreModel.Wishlist">
               <MappingFragment StoreEntitySet="Wishlist">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Carts">
-            <EntityTypeMapping TypeName="VareeStroreModel.Cart">
-              <MappingFragment StoreEntitySet="Cart">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

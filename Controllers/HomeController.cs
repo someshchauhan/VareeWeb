@@ -55,7 +55,7 @@ namespace VareeWeb.Controllers
             if (results.Any())
             {
                 string resultHtml = string.Join("", results.Select(p =>
-                    $"<a href='Home/ProductDetails/{p.ProductID} )'><div class='search-result-item'><div class='search-result-item-top'><img src='{p.ImageURL}' /></div><div class='search-result-item-bottom'><h6>{p.ProductName}</h6><span>Current Price: &#8377; {p.Price}</span><span class='btn btn-danger p-1'>MRP: <s>&#8377; {p.MRP}</s></span><span id='displayDiscount'>{p.DiscountPercentage}% Discount</span></div></div></a>"
+                    $"<a href='Home/ProductDetails/{p.ProductID}'><div class='search-result-item'><div class='search-result-item-top'><img src='{p.ImageURL}' /></div><div class='search-result-item-bottom'><h6>{p.ProductName}</h6><span>Current Price: &#8377; {p.Price}</span><span class='btn btn-danger p-1'>MRP: <s>&#8377; {p.MRP}</s></span><span id='displayDiscount'>{p.DiscountPercentage}% Discount</span></div></div></a>"
 
                 ));
 
